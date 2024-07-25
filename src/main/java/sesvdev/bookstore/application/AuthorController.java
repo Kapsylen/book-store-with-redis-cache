@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sesvdev.bookstore.application.model.AuthorDto;
-import sesvdev.bookstore.service.AuthorService;
+import sesvdev.bookstore.domain.AuthorService;
+import sesvdev.bookstore.domain.service.model.AuthorDto;
 
 import java.util.List;
 

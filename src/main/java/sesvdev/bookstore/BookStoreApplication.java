@@ -4,10 +4,10 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import sesvdev.bookstore.infrastructure.AuthorRepository;
 import sesvdev.bookstore.infrastructure.entity.Author;
-import sesvdev.bookstore.infrastructure.entity.AuthorRepository;
 import sesvdev.bookstore.infrastructure.entity.Book;
-import sesvdev.bookstore.infrastructure.entity.BookRepository;
+import sesvdev.bookstore.infrastructure.BookRepository;
 
 @SpringBootApplication
 public class BookStoreApplication {

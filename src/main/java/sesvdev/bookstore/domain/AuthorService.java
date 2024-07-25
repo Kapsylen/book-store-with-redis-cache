@@ -1,9 +1,9 @@
-package sesvdev.bookstore.service;
+package sesvdev.bookstore.domain;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import sesvdev.bookstore.application.model.AuthorDto;
-import sesvdev.bookstore.infrastructure.entity.AuthorRepository;
+import sesvdev.bookstore.domain.service.model.AuthorDto;
+import sesvdev.bookstore.infrastructure.AuthorRepository;
 
 import java.util.List;
 
@@ -15,10 +15,7 @@ public class AuthorService {
 
     public List<AuthorDto> getAllAuthors() {
         return authorRepository.findAll().stream()
-                .map(a -> AuthorDto.builder()
-                        .id(a.getId())
-                        .name(a.getName())
-                        .build())
+                .map(AuthorDto::authorDto)
                 .toList();
     }
 
