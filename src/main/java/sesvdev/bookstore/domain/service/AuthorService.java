@@ -1,4 +1,4 @@
-package sesvdev.bookstore.domain;
+package sesvdev.bookstore.domain.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

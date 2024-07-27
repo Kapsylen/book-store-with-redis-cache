@@ -3,13 +3,16 @@ package sesvdev.bookstore;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import sesvdev.bookstore.infrastructure.AuthorRepository;
 import sesvdev.bookstore.infrastructure.entity.Author;
 import sesvdev.bookstore.infrastructure.entity.Book;
 import sesvdev.bookstore.infrastructure.BookRepository;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = { RedisRepositoriesAutoConfiguration.class} )
+@EnableCaching
 public class BookStoreApplication {
 
     public static void main(String[] args) {

@@ -1,12 +1,13 @@
 package sesvdev.bookstore.infrastructure.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import sesvdev.bookstore.domain.service.model.BookDto;
 
 @Entity
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,4 +17,12 @@ public class Book {
 
     @ManyToOne
     private Author author;
+
+    public static Book toBook(BookDto bookDto) {
+        var book = new Book();
+        book.setId(bookDto.getId());
+        book.setTitle(bookDto.getTitle());
+        book.setIsbn(bookDto.getIsbn());
+        return book;
+    }
 }
