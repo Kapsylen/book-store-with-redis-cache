@@ -17,9 +17,8 @@ import java.util.List;
 public class BookService {
 
     private final BookRepository bookRepository;
-// todo cache this this to redis
     @SneakyThrows
-
+    @Cacheable(value = "bookCache")
     public List<BookDto> getAllBooks() {
       log.info("Get all books from database");
       Thread.sleep(3000);

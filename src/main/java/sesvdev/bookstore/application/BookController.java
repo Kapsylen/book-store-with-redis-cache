@@ -11,13 +11,13 @@ import sesvdev.bookstore.domain.service.BookService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/books")
 @AllArgsConstructor
 public class BookController {
 
     private final BookService bookService;
 
-    @GetMapping("/books")
+    @GetMapping
     public List<BookDto> getAllBooks() {
         return bookService.getAllBooks();
     }
